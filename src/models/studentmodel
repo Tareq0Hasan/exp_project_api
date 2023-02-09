@@ -1,0 +1,16 @@
+const mongoose=require('mongoose');
+
+
+
+
+const dataSchema= mongoose.Schema({
+
+    name:String,
+    roll:String,
+    class:String,
+    remarks:String,
+})
+
+
+const studentModel=mongoose.model('strudents',dataSchema);
+module.exports=studentModel;

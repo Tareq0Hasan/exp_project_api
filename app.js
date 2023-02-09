@@ -2,14 +2,16 @@ const express= require('express');
 const router= require('./src/routes/api');
 const app =  express();
 
+
 //security middle ware
 const expressrateLimit=   require('express-rate-limit')
-const helmet=  equire('helmet')
+const helmet=  require('helmet')
 const mongosanitize=    require('express-mongo-sanitize')
-const xss=    require('xss-clean')
+//const xss=    require('xss-clean')
 const hpp=    require('hpp')
 const cors=    require('cors')
-
+const mongoose= require('mongoose')
+const bodyparser= require('body-parser')
 
 
 //security middleware implement
@@ -17,8 +19,9 @@ const cors=    require('cors')
 app.use(cors())
 app.use(helmet())
 app.use(hpp())
-app.use(xss())
+//app.use(xss())
 app.use(mongosanitize())
+app.use(bodyparser.json())
 
 
 const limiter= expressrateLimit({
@@ -28,6 +31,19 @@ const limiter= expressrateLimit({
 })
 
 
+let uri="mongodb://localhost:27017/school";
+let options= {user:"",pass:""}
+mongoose.connect(uri,options,(error)=>{
+if (error){
+    console.log('connection fail');
+
+}else{ 
+    console.log('conection success');
+}
+   
+    
+
+})
 
 
 
