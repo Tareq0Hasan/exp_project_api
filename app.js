@@ -40,9 +40,6 @@ if (error){
 }else{ 
     console.log('conection success');
 }
-   
-    
-
 })
 
 

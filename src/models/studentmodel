@@ -13,7 +13,10 @@ const dataSchema= mongoose.Schema({
     },//{type:String},
     class:{type:String},
     remarks:{type:String,default:"No remarks"}
-},{versionKey:false})
+},{
+    versionKey:false
+
+})
 
 
 const studentModel=mongoose.model('strudents',dataSchema);
