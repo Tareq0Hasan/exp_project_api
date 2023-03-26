@@ -16,7 +16,7 @@ router.get('/hello-get',helloController.hello_get);
 router.post('/hello-post',helloController.hello_post);
 
 //apply jwt auth
-router.get('/tokenissue',TokenissueController.Tokenissue);
+router.post('/tokenissue',TokenissueController.Tokenissue);
 router.post('/insertdata',TokenVerifyMiddleware,studentsController.InsertStudents);
 router.get('/readdata',TokenVerifyMiddleware,studentsController.ReadStudent);
 router.post('/updatedata/:id',TokenVerifyMiddleware,studentsController.updateStudents);
