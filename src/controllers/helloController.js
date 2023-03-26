@@ -8,7 +8,7 @@ exports.hello_get=(req,res)=>{
 
 exports.hello_post=(req,res)=>{
 
-    res.status(200).json({'status':'success','data':'this is post'});
+    res.status(201).json({'status':'success','data':'this is post'});
 }
 
 
